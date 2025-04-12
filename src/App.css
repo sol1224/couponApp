@@ -219,4 +219,10 @@ body {
   .stamp-img {
     width: 100%;
   }
+
+  .coupon-div-align {
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+  }
 }
