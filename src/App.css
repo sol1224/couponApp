@@ -28,7 +28,6 @@ body {
 }
 
 .logo {
-  margin-top: 34px;
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
@@ -52,8 +51,8 @@ body {
   justify-items: center;
   box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
   background-color: rgb(247, 247, 247);
-  align-content: center;
-  justify-content: center;
+  align-content: center !important;
+  justify-content: center !important;
 }
 
 .coupon {
@@ -101,13 +100,14 @@ body {
 .buttons button {
   cursor: pointer;
   margin: 10px;
-  padding: 10px 20px;
+  width: 130px;
+  height: 42px;
   font-size: 16px;
   border: none;
   background-color: white;
   border-radius: 10px;
   box-shadow: 4px 4px 6px hsl(0deg 0% 0% / 0.2);
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 34px;
 }
 
@@ -124,8 +124,63 @@ body {
   justify-content: center;
 }
 
-/* 세로모드 모바일 디바이스 ( 해상도가 576px 보다 작은 화면 ) */
-@media screen and (max-width: 576px) {
+/* 세로모드 모바일 디바이스 ( 해상도가 700px 보다 작은 화면 ) */
+@media screen and (max-width: 850px) {
+  .daldal-cafe {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-div {
+    width: 100%;
+    height: auto;
+    background-color: white;
+  }
+  .menu {
+    width: 100%;
+    height: auto;
+  }
+
+  .logo-div {
+    width: 100%;
+    height: 460px;
+  }
+  .logo {
+    width: 100%;
+  }
+
+  .coupon-info {
+    font-size: 0.85rem;
+  }
+
+  .stamp {
+    height: 120px;
+  }
+
+  .coupon-info {
+    margin-bottom: 34px;
+  }
+
+  .buttons button {
+    margin: 50px 10px;
+  }
+
+  .coupon-div {
+    width: 100%;
+    height: 460px;
+    justify-items: center;
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+    background-color: rgb(247, 247, 247);
+    align-content: center !important;
+    justify-content: center !important;
+  }
+
+  .stamp-img {
+    width: 100%;
+  }
+}
+
+/* 세로모드 모바일 디바이스 ( 해상도가 427px 보다 작은 화면 ) */
+@media screen and (max-width: 427px) {
   .daldal-cafe {
     display: flex;
     flex-direction: column;
@@ -147,8 +202,18 @@ body {
     width: 100%;
   }
 
+  .stamp {
+    height: 64px;
+  }
+
   .coupon-div {
     width: 100%;
+    height: 300px;
+    justify-items: center;
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+    background-color: rgb(247, 247, 247);
+    align-content: center !important;
+    justify-content: center !important;
   }
 
   .stamp-img {
