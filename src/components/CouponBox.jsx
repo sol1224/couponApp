@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import couponStore from "../stores/CouponStore";
 
 const CouponBox = () => {
   const { count, increase, decrease } = couponStore();
+
+  // ✅ 더블탭 확대 방지용 useEffect 추가
+  useEffect(() => {
+    let lastTouchEnd = 0;
+
+    const preventDoubleTapZoom = e => {
+      const now = new Date().getTime();
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+      }
+      lastTouchEnd = now;
+    };
+
+    document.addEventListener("touchend", preventDoubleTapZoom, {
+      passive: false,
+    });
+
+    return () => {
+      document.removeEventListener("touchend", preventDoubleTapZoom);
+    };
+  }, []);
 
   return (
     <div className="main">
@@ -58,6 +79,7 @@ const CouponBox = () => {
             </div>
           </div>
         </div>
+
         <div className="buttons">
           <button onClick={increase}>적립</button>
           <button onClick={decrease}>적립취소</button>
