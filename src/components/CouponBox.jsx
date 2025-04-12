@@ -4,7 +4,6 @@ import couponStore from "../stores/CouponStore";
 const CouponBox = () => {
   const { count, increase, decrease } = couponStore();
 
-  // ✅ 더블탭 확대 방지용 useEffect 추가
   useEffect(() => {
     let lastTouchEnd = 0;
 
