@@ -221,8 +221,9 @@ body {
   }
 
   .coupon-div-align {
-    justify-items: center;
-    align-content: center;
-    justify-content: center;
+    width: 100%;
+    display: flex; /* 추가 */
+    flex-direction: column; /* 세로 정렬 유지 */
+    align-items: center; /* 가로 가운데 정렬 */
   }
 }
